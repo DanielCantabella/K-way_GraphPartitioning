@@ -1,4 +1,4 @@
-# id2222-lab4
+# K-way Graph Partitioning Using JaBeJa
 
 ## Task 1:
 Ja-Be-Ja algorithm is implemented in [Jabeja.java](src%2Fmain%2Fjava%2Fse%2Fkth%2Fjabeja%2FJabeja.java) file.
@@ -32,10 +32,10 @@ In the following table we summarize the results we got after the JaBeJa algorith
 
 
 |   Graph   |  Number of swaps  | Time to converge |  Minimum edge cut observed  |  Time to execute (seconds)  |
-|:---------:|:-----------------:|------------------|:---------------------------:|:---------------------------:|
-|   3elt    |      1307755      | 417              |            1163             |            17.65            |
-|   add20   |      673453       | 894              |            1460             |            8.34             |
-|  Twitter  |      765501       | 759              |            41160            |            31.70            |
+|:---------:|:-----------------:|:----------------:|:---------------------------:|:---------------------------:|
+|   3elt    |      1307755      |       417        |            1163             |            17.65            |
+|   add20   |      673453       |       894        |            1460             |            8.34             |
+|  Twitter  |      765501       |       759        |            41160            |            31.70            |
 
 
 ## Task 2:
@@ -195,9 +195,23 @@ We again, started by analyzing the effect delta has in the algorithm.
     |   0.8   |  2250259/4498067   |      782/1911      |         42372/42270         |        332.97/611.95        |
 
 **_Results_**: 
+In the case of 3elt graph:
+* Increasing deltas increases the number of swaps
+* Increasing deltas achieves a lower minimum edge cut observed
 
+None of the trials has shown a clear conversion but seem to converge similar results if we look at their plots
+(not included here)
+
+In the case of add20 and twitter:
+* Increasing delta does not seem to achieve a lower minimum edge observed, not even increase the number of swaps.
+
+Based on the plots, they all follow a similar pattern where number of swaps increase with every round and edge cut and 
+migrations seem to converge to a stable point (which we cannot demonstrate with our previous results in the table). 
 
 **_Discussion_**: 
+n 3elt minimum edge cuts are much lower than those observed with the original simulated annealing function.
+
+In add20 and twitter graphs there is no evidence that results are better in one configuration or another.
 
 
 
@@ -229,9 +243,12 @@ Later again, we studied the effect the initial temperature has in the algorithm.
     |      0.3      |  2248825/449047   |         782/901         |         41662/41604         |        172.15/339.30        |
 
 **_Results_**: 
-
+Changes in the initial temperature doesn’t seem to have any impact on the minimum edge cut observed nor in the number of swaps.
 
 **_Discussion_**: 
+Based on the observed results both when exploring the initial temperature and the delta parameter, we can say randomness
+takes an important role and has been difficult to explore all different parameters to find a correlation. Grid search or
+other optimization techniques can help in identifying suitable parameter values.
 
 
 
@@ -267,6 +284,9 @@ In this section we are going to experiment with different parameters and configu
     |       2       |     899733      |            838             |           11632           |          163.71           |
     |       4       |     765501      |            759             |           41160           |           31.70           |
     |       8       |     590143      | 987 (maybe not converged)  |           90344           |          190.53           |
+
+  * Increasing number of partitions results in a lower number of swaps in every case.
+  * Increasing number of partitions also results in a higher minimum edge cut observed
 
 3elt graphs:
 * 2 partitions:
@@ -311,7 +331,8 @@ Twitter graphs:
     |   2   |     765501      |       759        |           41160           |           31.70           |
     |   4   |     756612      |       510        |           42043           |          170.71           |
 
-  * if alpha is set too high, nodes might overestimate the value of a swap and end up in an inferior state.
+  * Increasing alpha results in a higher minimum edge cut observed except in the case of Twitter
+  * If alpha is set too high, nodes might overestimate the value of a swap and end up in an inferior state.
 
 3elt graphs:
 * Alpha 0.5:
