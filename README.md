@@ -205,7 +205,7 @@ Later again, we studied the effect the initial temperature has in the algorithm.
     |      0.8      |  3885356/7765897   |      998/1997      |          1015/894           |        133.43/285.11        |
     |      0.5      |  3884923/7764298   |      998/1993      |           952/880           |        85.41/138.40         |
     |      0.3      |  3883838/7766680   |      998/1997      |          1011/800           |        82.15/153.83         |
-
+![3elt3000.png](images%2Ftask2%2Fdeltas%2FnewAnnealing%2F3elt3000.png)
   * add20:
   
     |  Temperature  |  Number of swaps   |  Time to converge  |  Minimum edge cut observed  |  Time to execute (seconds)  |
@@ -213,7 +213,7 @@ Later again, we studied the effect the initial temperature has in the algorithm.
     |      0.8      |  1971865/3942059   |      965/1993      |          1824/1790          |         37.27/71.59         |
     |      0.5      |  1971718/3942193   |      974/1981      |          1802/1786          |         36.25/73.52         |
     |      0.3      |  1972379/3942878   |      968/1987      |          1776/1798          |         36.05/68.58         |
-  
+  ![add203000.png](images%2Ftask2%2Fdeltas%2FnewAnnealing%2Fadd203000.png)
   * Twitter:
   
     |  Temperature  |  Number of swaps  |    Time to converge     |  Minimum edge cut observed  |  Time to execute (seconds)  |
@@ -221,7 +221,7 @@ Later again, we studied the effect the initial temperature has in the algorithm.
     |      0.8      |  2249248/4494843  |  656/403 (interesting)  |         41686/41622         |        168.69/336.59        |
     |      0.5      |  2249536/4496908  |        901/1576         |         41591/42123         |        173.00/341.28        |
     |      0.3      |  2248825/449047   |         782/901         |         41662/41604         |        172.15/339.30        |
-  
+  ![twitter3000.png](images%2Ftask2%2Fdeltas%2FnewAnnealing%2Ftwitter3000.png)
 **_Results_**: 
 
 
@@ -290,3 +290,21 @@ In this section we are going to experiment with different parameters and configu
     |   4   |     756612      |       510        |           42043           |          170.71           |
 
   * if alpha is set too high, nodes might overestimate the value of a swap and end up in an inferior state.
+
+3elt graphs:
+* Alpha 0.5:
+![3elt05.png](images%2Ftask2%2Falphas%2F3elt05.png)
+* Alpha 4:
+![3elt4.png](images%2Ftask2%2Falphas%2F3elt4.png)
+
+add20 graphs:
+* Alpha 0.5:
+![add2005.png](images%2Ftask2%2Falphas%2Fadd2005.png)
+* Alpha 4:
+![add204.png](images%2Ftask2%2Falphas%2Fadd204.png)
+
+Twitter graphs:
+* Alpha 0.5:
+![twitter05.png](images%2Ftask2%2Falphas%2Ftwitter05.png)
+* Alpha 4:
+![twitter4.png](images%2Ftask2%2Falphas%2Ftwitter4.png)
