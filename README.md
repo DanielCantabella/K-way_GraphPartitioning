@@ -127,7 +127,7 @@ The higher the temperature the longer it will take to T reach 1.
     |:-------------:|:-----------------:|:------------------:|:---------------------------:|:---------------------------:|
     |      1.5      |      336359       |        844         |            1602             |            12.53            |
     |      2.0      |      673453       |        894         |            1460             |            8.34             |
-    |    5.0 (*)    |      2723890      |        1487        |            1553             |            79.83            |
+    |    5.0 (*)    |      2820697      |        1906        |            1436             |            79.83            |
 
   * Twitter:
   
@@ -135,13 +135,14 @@ The higher the temperature the longer it will take to T reach 1.
     |:-------------:|:--------------------:|:------------------:|:---------------------------:|:---------------------------:|
     |      1.5      |        379607        |        515         |            41930            |           185.73            |
     |      2.0      |        765501        |        759         |            41160            |            31.70            |
-    |    5.0 (*)    |       2537107        |        1532        |            41460            |           349.11            |
+    |    5.0 (*)    |       3302007        |        1619        |            41146            |           316.55            |
   
 **_Results_**: 
 * Increasing initial temperature results in an increase in the number of swaps counted by the algorithm. 
 * It also results in a larger time of convergence, meaning the algorthm takes more time to converge to a result, (*)
 even in some cases it does not even seem to converge with 1000 rounds.
 * A higher initial temperature resulted in a higher minimum edge cut observed among all the rounds of the algorithm.
+
 (*) As the algorithm didn't converge with an initial temperature of 5.0 in any case for 1000 rounds, we decided to
 increase the number of rounds to 2000 to check its effect.
 
@@ -285,37 +286,3 @@ In this section we are going to experiment with different parameters and configu
     |   4   |     756612      |       510        |           42043           |          170.71           |
 
   * if alpha is set too high, nodes might overestimate the value of a swap and end up in an inferior state.
-
-<style>
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-
-  table, th, td {
-    border: 1px solid black;
-  }
-
-  th, td {
-    padding: 10px;
-    text-align: center;
-  }
-
-  td.low {
-    background-color: #aaffaa; /* Light green for low values */
-  }
-
-  td.medium {
-    background-color: #ffffaa; /* Yellow for medium values */
-  }
-
-  td.high {
-    background-color: #ffaaaa; /* Light red for high values */
-  }
-</style>
-
-| Value 1 | Value 2 | Value 3 |
-|---------|---------|---------|
-| 0.2     | 0.8     | 0.5     |
-| 0.9     | 0.3     | 0.7     |
-| 0.1     | 0.4     | 0.6     |
