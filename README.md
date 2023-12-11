@@ -285,3 +285,37 @@ In this section we are going to experiment with different parameters and configu
     |   4   |     756612      |       510        |           42043           |          170.71           |
 
   * if alpha is set too high, nodes might overestimate the value of a swap and end up in an inferior state.
+
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  table, th, td {
+    border: 1px solid black;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+
+  td.low {
+    background-color: #aaffaa; /* Light green for low values */
+  }
+
+  td.medium {
+    background-color: #ffffaa; /* Yellow for medium values */
+  }
+
+  td.high {
+    background-color: #ffaaaa; /* Light red for high values */
+  }
+</style>
+
+| Value 1 | Value 2 | Value 3 |
+|---------|---------|---------|
+| 0.2     | 0.8     | 0.5     |
+| 0.9     | 0.3     | 0.7     |
+| 0.1     | 0.4     | 0.6     |
