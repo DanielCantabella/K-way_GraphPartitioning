@@ -111,7 +111,7 @@ public class Jabeja {
   public Node findPartner(int nodeId, Integer[] nodes){
 
     Node nodeP = entireGraph.get(nodeId);
-    double alpha = 4;
+    double alpha = 2.0;
     Node bestPartner = null;
     double highestBenefit = 0;
 
