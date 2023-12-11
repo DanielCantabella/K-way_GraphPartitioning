@@ -35,7 +35,7 @@ public class Jabeja {
   public void startJabeja() throws IOException {
     for (round = 0; round < config.getRounds(); round++) {
       for (int id : entireGraph.keySet()) {
-        sampleAndSwap(id);
+        sampleAndSwap(id); //
       }
 
       //one cycle for all nodes have completed.
@@ -50,10 +50,24 @@ public class Jabeja {
    */
   private void saCoolDown(){
     // TODO for second task
-    if (T > 1)
-      T -= config.getDelta();
-    if (T < 1)
-      T = 1;
+    //if (T > 1)
+      //T -= config.getDelta();
+    //if (T < 1)
+      //T = 1;
+    float minT = 0.00001f;
+    float alfa = config.getDelta(); // now alpha will get defined by -delta when running code
+    if (T > minT){
+      T = T * alfa;
+    }
+    if (T < minT){
+      T = minT;
+    }
+
+  }
+
+  public float acceptance_probability(double oldCost, double newCost, float T){
+    float ap = (float) Math.exp((float) (newCost-oldCost)/T);
+    return ap;
   }
 
   /**
@@ -62,32 +76,65 @@ public class Jabeja {
    */
   private void sampleAndSwap(int nodeId) {
     Node partner = null;
-    Node nodep = entireGraph.get(nodeId);
+    Node nodeP = entireGraph.get(nodeId);
+    Integer[] candidateSet = null;
 
     if (config.getNodeSelectionPolicy() == NodeSelectionPolicy.HYBRID
             || config.getNodeSelectionPolicy() == NodeSelectionPolicy.LOCAL) {
       // swap with random neighbors
       // TODO
+      candidateSet = getNeighbors(nodeP);
+       
     }
 
     if (config.getNodeSelectionPolicy() == NodeSelectionPolicy.HYBRID
             || config.getNodeSelectionPolicy() == NodeSelectionPolicy.RANDOM) {
       // if local policy fails then randomly sample the entire graph
       // TODO
+      candidateSet = getSample(nodeId);
     }
 
     // swap the colors
     // TODO
+    Node chosenPartner = findPartner(nodeId, candidateSet);
+    if (chosenPartner != null) {
+      int partnerColor = chosenPartner.getColor();
+      int nodePcolor = nodeP.getColor();
+      nodeP.setColor(partnerColor);
+      chosenPartner.setColor(nodePcolor);
+      numberOfSwaps += 1;
+    }
+    
   }
 
   public Node findPartner(int nodeId, Integer[] nodes){
 
-    Node nodep = entireGraph.get(nodeId);
-
+    Node nodeP = entireGraph.get(nodeId);
+    double alpha = 4;
     Node bestPartner = null;
     double highestBenefit = 0;
 
     // TODO
+    for (int nodeQId : nodes) {
+            Node nodeQ = entireGraph.get(nodeQId);
+            int dpp = getDegree(nodeP, nodeP.getColor());
+            int dqq = getDegree(nodeQ, nodeQ.getColor());
+            double old = Math.pow(dpp, alpha) + Math.pow(dqq, alpha);
+            int dpq = getDegree(nodeP, nodeQ.getColor());
+            int dqp = getDegree(nodeQ, nodeP.getColor());
+            double nou = Math.pow(dpq, alpha) + Math.pow(dqp, alpha);
+            //if ((nou * T > old) && (nou > highestBenefit)){
+              //bestPartner = nodeQ;
+              //highestBenefit = nou;
+            //}
+            
+            float ap = acceptance_probability(old, nou, T);
+            if (ap > Math.random()){
+              bestPartner = nodeQ;
+              highestBenefit = nou;
+            }
+              
+    }
 
     return bestPartner;
   }
