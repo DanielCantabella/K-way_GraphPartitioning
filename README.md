@@ -152,9 +152,9 @@ and the possibility to get stacked in a local optima result (i.e., less temperat
 
   
 #### Task 2.1.1: New simulated annealing
-In this section we used the new simulated annealing configuration described in [this paper](http://katrinaeg.com/simulated-annealing.html)
-with our original acceptance probability function.
-All the other parameters kept their original default values described in [Task 2.1](#task-21) except for temperature,
+In this section we used the new simulated annealing configuration described in [this paper](http://katrinaeg.com/simulated-annealing.html).
+You can see the implemented code commented in [Jabeja.java](src%2Fmain%2Fjava%2Fse%2Fkth%2Fjabeja%2FJabeja.java) under "TODO for Task 2" sections.
+All the other parameters kept their original default values described in [Task 2](#task-2) except for temperature,
 which in that case its maximum value is 1, so we assume it is now our default value.
 
 ##### **Deltas**:
@@ -162,12 +162,14 @@ We again, started by analyzing the effect delta has in the algorithm.
 
   * 3elt:
   
-    |        Delta (alfa)        |  Number of swaps  |  Time to converge  |  Minimum edge cut observed  |  Time to execute (seconds)  |
-    |:--------------------------:|:-----------------:|:------------------:|:---------------------------:|:---------------------------:|
-    |  0.003 (*) not converged   |      3884825      |        999         |             930             |           130.88            |
-    |  0.5   (*) not converged   |      3885387      |        999         |             889             |           139.03            |
-    |  0.8   (*) not converged   |      3886617      |        999         |             843             |           134.42            |
+    | Delta (alfa) |  Number of swaps  | Time to converge |  Minimum edge cut observed   | Time to execute (seconds) |
+    |:------------:|:-----------------:|:----------------:|:----------------------------:|:-------------------------:|
+    |  0.003 (*)   | 3884825/11645721  |     999/2999     |           930/730            |       130.88/123.47       |
+    |  0.5   (*)   | 3885387/11645341  |     999/2980     |           889/766            |       139.03/88.07        |
+    |  0.8   (*)   | 3886617/11646922  |     999/2987     |           843/781            |       134.42/88.48        |
 (*) not even converged with 2000 rounds
+![3elt3000.png](images%2Ftask2%2Fdeltas%2FnewAnnealing%2F3elt3000.png)
+
   * add20: 
       
     |  Delta  |  Number of swaps   |          Time to converge           |  Minimum edge cut observed  |  Time to execute (seconds)  |
@@ -175,6 +177,7 @@ We again, started by analyzing the effect delta has in the algorithm.
     |  0.003  |  1972708/3942139   |              878/1582               |          1779/1783          |        65.39/131.55         |
     |   0.5   |  1972261/3943393   |              886/1707               |          1785/1796          |        65.60/129.44         |
     |   0.8   |  1972494/3942041   |  998/1938 (probably not converged)  |          1783/1742          |        67.87/130.68         |
+![add203000.png](images%2Ftask2%2Fdeltas%2FnewAnnealing%2Fadd203000.png)
 
   * Twitter: 
     
@@ -183,6 +186,7 @@ We again, started by analyzing the effect delta has in the algorithm.
     |  0.003  |  2247437/4498187   |      835/1942      |         41615/41652         |       294.34/1002.58        |
     |   0.5   |  2248966/4497603   |      569/1281      |         41627/42230         |        277.36/731.49        |
     |   0.8   |  2250259/4498067   |      782/1911      |         42372/42270         |        332.97/611.95        |
+![twitter3000.png](images%2Ftask2%2Fdeltas%2FnewAnnealing%2Ftwitter3000.png)
 
 **_Results_**: 
 
@@ -201,7 +205,7 @@ Later again, we studied the effect the initial temperature has in the algorithm.
     |      0.8      |  3885356/7765897   |      998/1997      |          1015/894           |        133.43/285.11        |
     |      0.5      |  3884923/7764298   |      998/1993      |           952/880           |        85.41/138.40         |
     |      0.3      |  3883838/7766680   |      998/1997      |          1011/800           |        82.15/153.83         |
-  
+
   * add20:
   
     |  Temperature  |  Number of swaps   |  Time to converge  |  Minimum edge cut observed  |  Time to execute (seconds)  |

@@ -49,20 +49,19 @@ public class Jabeja {
    * Simulated analealing cooling function
    */
   private void saCoolDown(){
+//     if (T > 1)
+//       T -= config.getDelta();
+//     if (T < 1)
+//       T = 1;
     // TODO for second task
-    if (T > 1)
-      T -= config.getDelta();
-    if (T < 1)
-      T = 1;
-    // TODO for second task
-//     float minT = 0.00001f;
-//     float alfa = config.getDelta(); // now alpha will get defined by -delta when running code
-//     if (T > minT){
-//       T = T * alfa;
-//     }
-//     if (T < minT){
-//       T = minT;
-//     }
+    float minT = 0.00001f;
+    float alfa = config.getDelta(); // now alpha will get defined by -delta when running code
+    if (T > minT){
+      T = T * alfa;
+    }
+    if (T < minT){
+      T = minT;
+    }
 
   }
 
@@ -103,7 +102,7 @@ public class Jabeja {
       int nodePcolor = nodeP.getColor();
       nodeP.setColor(partnerColor);
       chosenPartner.setColor(nodePcolor);
-      numberOfSwaps += 1;
+      numberOfSwaps++;
     }
     
   }
@@ -124,16 +123,16 @@ public class Jabeja {
             int dpq = getDegree(nodeP, nodeQ.getColor());
             int dqp = getDegree(nodeQ, nodeP.getColor());
             double nou = Math.pow(dpq, alpha) + Math.pow(dqp, alpha);
-            if ((nou * T > old) && (nou > highestBenefit)){
-              bestPartner = nodeQ;
-              highestBenefit = nou;
-            }
-//             TASK 2
-//             float ap = acceptance_probability(old, nou, T);
-//             if (ap > Math.random()){
+//             if ((nou * T > old) && (nou > highestBenefit)){
 //               bestPartner = nodeQ;
 //               highestBenefit = nou;
 //             }
+//             TASK 2
+            float ap = acceptance_probability(old, nou, T);
+            if (ap > Math.random()){
+              bestPartner = nodeQ;
+              highestBenefit = nou;
+            }
               
     }
 
