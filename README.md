@@ -1,20 +1,36 @@
 # id2222-lab4
 
 ## Task 1:
+Ja-Be-Ja algorithm is implemented in [Jabeja.java](src%2Fmain%2Fjava%2Fse%2Fkth%2Fjabeja%2FJabeja.java) file.
+Below each TODO task you can find the code.
+
+Here we show the different results we get when using the following default configuration of the algorithm:
+- Simulated annealing delta = 0.003
+- Simulated annealing temperature = 2.0
+- Number of partitions (colors) = 4
+- Alpha = 2.0
+
+And here we show a short description of how the different graphs we are going to investigate look like and 
+the plots after the JaBeJa implementation:
+
 * 3elt: 
   * Nodes: 4720, Edges: 13722
   * Color Distribution: [ Color: 0, Count: 1180 ] [ Color: 1, Count: 1180 ] [ Color: 2, Count: 1180 ] [ Color: 3, Count: 1180 ]
+![3elt.png](images%2Ftask2%2Fdefault%2F3elt.png)
 
 * add20:
   * Nodes: 2395, Edges: 7462
   * Color Distribution: [ Color: 0, Count: 598 ] [ Color: 1, Count: 599 ] [ Color: 2, Count: 599 ] [ Color: 3, Count: 599]
+![add20.png](images%2Ftask2%2Fdefault%2Fadd20.png)
 
 * Twitter:
   * Nodes: 2731, Edges: 164629
   * Color Distribution: [ Color: 0, Count: 682 ] [ Color: 1, Count: 683 ] [ Color: 2, Count: 683 ] [ Color: 3, Count: 683 ]
+![twitter.png](images%2Ftask2%2Fdefault%2Ftwitter.png)
+
+In the following table we summarize the results we got after the JaBeJa algorithm:
 
 
-## Task 2:
 | Graph   | Number of swaps | Time to converge | Minimum edge cut observed | Time to execute (seconds) |
 |---------|-----------------|------------------|---------------------------|---------------------------|
 | 3elt    | 1307755         | 417              | 1163                      | 17.65                     |
@@ -22,8 +38,9 @@
 | Twitter | 765501          | 759              | 41160                     | 31.70                     |
 
 
-### Task 2.1:
-We are going to analyze the effect of different parameters on our sample graphs:
+## Task 2:
+In this section we analyze the effects of the parameters of the algorithm as well as the implementation of a 
+new simulated annealing function.
 
 The different parameters we are going to investigate are:
 * Simulated annealing delta (default: 0.003)
@@ -31,7 +48,14 @@ The different parameters we are going to investigate are:
 * Number of partitions (default: 4)
 * Alpha (default: 2.0)
 
-We are going to investigate the effect of the different simulated annealing parameters (i.e., delta and initial temperature).
+We are going to analyze the effect of different parameters on our sample graphs:
+First of all, we are going to investigate the effect of the different simulated annealing parameters on both the 
+original and a new simulated annealing function, and later on we are going to investigate the effect of alpha an number
+of partitions parameters.
+
+### Task 2.1:
+We start by exploring the different simulated annealing parameters (i.e., delta and
+initial temperature)
 
 #### Task 2.1.1: Original simulated annealing
 In this section we used our first simulated annealing configuration with our original acceptance probability function.
