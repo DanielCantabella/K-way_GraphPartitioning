@@ -31,11 +31,11 @@ the plots after the JaBeJa implementation:
 In the following table we summarize the results we got after the JaBeJa algorithm:
 
 
-| Graph   | Number of swaps | Time to converge | Minimum edge cut observed | Time to execute (seconds) |
-|---------|-----------------|------------------|---------------------------|---------------------------|
-| 3elt    | 1307755         | 417              | 1163                      | 17.65                     |
-| add20   | 673453          | 894              | 1460                      | 8.34                      |
-| Twitter | 765501          | 759              | 41160                     | 31.70                     |
+|   Graph   |  Number of swaps  | Time to converge |  Minimum edge cut observed  |  Time to execute (seconds)  |
+|:---------:|:-----------------:|------------------|:---------------------------:|:---------------------------:|
+|   3elt    |      1307755      | 417              |            1163             |            17.65            |
+|   add20   |      673453       | 894              |            1460             |            8.34             |
+|  Twitter  |      765501       | 759              |            41160            |            31.70            |
 
 
 ## Task 2:
@@ -70,27 +70,27 @@ The higher the delta the faster T reaches 1.
 
   * 3elt:
   
-    | Delta | Number of swaps | Time to converge | Minimum edge cut observed | Time to execute (seconds) |
-    |-------|-----------------|------------------|---------------------------|---------------------------|
-    | 0.003 | 1307755         | 417              | 1163                      | 17.65                     |
-    | 0.5   | 11311           | 185              | 1936                      | 24.30                     |
-    | 0.8   | 11026           | 95               | 1984                      | 24.51                     |
+    | Delta  | Number of swaps | Time to converge |Minimum edge cut observed |Time to execute (seconds) |
+    |:------:|:---------------:|:----------------:|:------------------------:|:------------------------:|
+    | 0.003  |     1307755     |       417        |           1163           |          17.65           |
+    |  0.5   |      11311      |       185        |           1936           |          24.30           |
+    |  0.8   |      11026      |        95        |           1984           |          24.51           |
 
   * add20: 
         
-    | Delta | Number of swaps | Time to converge | Minimum edge cut observed | Time to execute (seconds) |
-    |-------|----------------|------------------|---------------------------|---------------------------|
-    | 0.003 | 673453         | 894              | 1460                      | 8.34                      |
-    | 0.5   | 5220           | 848              | 1754                      | 12.03                     |
-    | 0.8   | 5134           | 130              | 1791                      | 12.48                     |     
+    |  Delta  | Number of swaps  |  Time to converge  |  Minimum edge cut observed  |  Time to execute (seconds)  |
+    |:-------:|:----------------:|:------------------:|:---------------------------:|:---------------------------:|
+    |  0.003  |      673453      |        894         |            1460             |            8.34             |
+    |   0.5   |       5220       |        848         |            1754             |            12.03            |
+    |   0.8   |       5134       |        130         |            1791             |            12.48            |     
 
   * Twitter: 
     
-    | Delta | Number of swaps | Time to converge | Minimum edge cut observed | Time to execute (seconds) |
-    |-------|-----------------|------------------|---------------------------|---------------------------|
-    | 0.003 | 765501          | 759              | 41160                     | 31.70                     |
-    | 0.5   | 7553            | 429              | 42045                     | 165.51                    |
-    | 0.8   | 7453            | 501 (*)          | 42025                     | 186.95                   |
+    |  Delta  |  Number of swaps  |  Time to converge  |  Minimum edge cut observed  |  Time to execute (seconds)  |
+    |:-------:|:-----------------:|:------------------:|:---------------------------:|:---------------------------:|
+    |  0.003  |      765501       |        759         |            41160            |            31.70            |
+    |   0.5   |       7553        |        429         |            42045            |           165.51            |
+    |   0.8   |       7453        |      501 (*)       |            42025            |           186.95            |
 
 **_Results_**: 
 * Increasing delta results in a decrease in the number of swaps counted by the algorithm. 
@@ -115,27 +115,27 @@ The higher the temperature the longer it will take to T reach 1.
 
   * 3elt:
     
-    | Temperature | Number of swaps | Time to converge | Minimum edge cut observed | Time to execute (seconds) |
-    |-------------|-----------------|------------------|---------------------------|---------------------------|
-    | 1.5         | 653054          | 216              | 1503                      | 24.59                     |
-    | 2.0         | 1307755         | 417              | 1163                      | 24.79                     |
-    | 5.0 (*)     | 5223884         | 1387             | 610                       | 153.90                    |
+    |  Temperature  |  Number of swaps  |  Time to converge  |  Minimum edge cut observed  |  Time to execute (seconds)  |
+    |:-------------:|:-----------------:|:------------------:|:---------------------------:|:---------------------------:|
+    |      1.5      |      653054       |        216         |            1503             |            24.59            |
+    |      2.0      |      1307755      |        417         |            1163             |            24.79            |
+    |    5.0 (*)    |      5223884      |        1387        |             610             |           153.90            |
 
   * add20:
   
-    | Temperature | Number of swaps | Time to converge | Minimum edge cut observed | Time to execute (seconds) |
-    |-------------|-----------------|------------------|---------------------------|---------------------------|
-    | 1.5         | 336359          | 844              | 1602                      | 12.53                     |
-    | 2.0         | 673453          | 894              | 1460                      | 8.34                      |
-    | 5.0 (*)     | 2723890         | 1487             | 1553                      | 79.83                     |
+    |  Temperature  |  Number of swaps  |  Time to converge  |  Minimum edge cut observed  |  Time to execute (seconds)  |
+    |:-------------:|:-----------------:|:------------------:|:---------------------------:|:---------------------------:|
+    |      1.5      |      336359       |        844         |            1602             |            12.53            |
+    |      2.0      |      673453       |        894         |            1460             |            8.34             |
+    |    5.0 (*)    |      2723890      |        1487        |            1553             |            79.83            |
 
   * Twitter:
   
-    | Temperature | Number of swaps    | Time to converge | Minimum edge cut observed | Time to execute (seconds) |
-    |-------------|--------------------|------------------|---------------------------|---------------------------|
-    | 1.5         | 379607             | 515              | 41930                     | 185.73                    |
-    | 2.0         | 765501             | 759              | 41160                     | 31.70                     |
-    | 5.0 (*)     | 2537107            | 1532             | 41460                     | 349.11                    |
+    |  Temperature  |   Number of swaps    |  Time to converge  |  Minimum edge cut observed  |  Time to execute (seconds)  |
+    |:-------------:|:--------------------:|:------------------:|:---------------------------:|:---------------------------:|
+    |      1.5      |        379607        |        515         |            41930            |           185.73            |
+    |      2.0      |        765501        |        759         |            41160            |            31.70            |
+    |    5.0 (*)    |       2537107        |        1532        |            41460            |           349.11            |
   
 **_Results_**: 
 * Increasing initial temperature results in an increase in the number of swaps counted by the algorithm. 
@@ -161,27 +161,27 @@ We again, started by analyzing the effect delta has in the algorithm.
 
   * 3elt:
   
-    | Delta (alfa)             | Number of swaps | Time to converge | Minimum edge cut observed | Time to execute (seconds) |
-    |--------------------------|-----------------|------------------|---------------------------|---------------------------|
-    | 0.003 (*) not converged  | 3884825         | 999              | 930                       | 130.88                    |
-    | 0.5   (*) not converged  | 3885387         | 999              | 889                       | 139.03                    |
-    | 0.8   (*) not converged  | 3886617         | 999              | 843                       | 134.42                    |
+    |        Delta (alfa)        |  Number of swaps  |  Time to converge  |  Minimum edge cut observed  |  Time to execute (seconds)  |
+    |:--------------------------:|:-----------------:|:------------------:|:---------------------------:|:---------------------------:|
+    |  0.003 (*) not converged   |      3884825      |        999         |             930             |           130.88            |
+    |  0.5   (*) not converged   |      3885387      |        999         |             889             |           139.03            |
+    |  0.8   (*) not converged   |      3886617      |        999         |             843             |           134.42            |
 (*) not even converged with 2000 rounds
   * add20: 
       
-    | Delta | Number of swaps  | Time to converge                  | Minimum edge cut observed | Time to execute (seconds) |
-    |-------|------------------|-----------------------------------|---------------------------|---------------------------|
-    | 0.003 | 1972708/3942139  | 878/1582                          | 1779/1783                 | 65.39/131.55              |
-    | 0.5   | 1972261/3943393  | 886/1707                          | 1785/1796                 | 65.60/129.44              |
-    | 0.8   | 1972494/3942041  | 998/1938 (probably not converged) | 1783/1742                 | 67.87/130.68                    |
+    |  Delta  |  Number of swaps   |          Time to converge           |  Minimum edge cut observed  |  Time to execute (seconds)  |
+    |:-------:|:------------------:|:-----------------------------------:|:---------------------------:|:---------------------------:|
+    |  0.003  |  1972708/3942139   |              878/1582               |          1779/1783          |        65.39/131.55         |
+    |   0.5   |  1972261/3943393   |              886/1707               |          1785/1796          |        65.60/129.44         |
+    |   0.8   |  1972494/3942041   |  998/1938 (probably not converged)  |          1783/1742          |        67.87/130.68         |
 
   * Twitter: 
     
-    | Delta | Number of swaps  | Time to converge | Minimum edge cut observed | Time to execute (seconds) |
-    |-------|------------------|------------------|---------------------------|---------------------------|
-    | 0.003 | 2247437/4498187  | 835/1942         | 41615/41652               | 294.34/1002.58            |
-    | 0.5   | 2248966/4497603  | 569/1281         | 41627/42230                    | 277.36/731.49                   |
-    | 0.8   | 2250259/4498067  | 782/1911         | 42372/42270               | 332.97/611.95             |
+    |  Delta  |  Number of swaps   |  Time to converge  |  Minimum edge cut observed  |  Time to execute (seconds)  |
+    |:-------:|:------------------:|:------------------:|:---------------------------:|:---------------------------:|
+    |  0.003  |  2247437/4498187   |      835/1942      |         41615/41652         |       294.34/1002.58        |
+    |   0.5   |  2248966/4497603   |      569/1281      |         41627/42230         |        277.36/731.49        |
+    |   0.8   |  2250259/4498067   |      782/1911      |         42372/42270         |        332.97/611.95        |
 
 **_Results_**: 
 
@@ -195,27 +195,27 @@ Later again, we studied the effect the initial temperature has in the algorithm.
 
   * 3elt:
     
-    | Temperature | Number of swaps  | Time to converge | Minimum edge cut observed | Time to execute (seconds) |
-    |-------------|------------------|------------------|---------------------------|---------------------------|
-    | 0.8         | 3885356/7765897  | 998/1997         | 1015/894                  | 133.43/285.11             |
-    | 0.5         | 3884923/7764298  | 998/1993         | 952/880                   | 85.41/138.40              |
-    | 0.3         | 3883838/7766680  | 998/1997         | 1011/800                  | 82.15/153.83              |
+    |  Temperature  |  Number of swaps   |  Time to converge  |  Minimum edge cut observed  |  Time to execute (seconds)  |
+    |:-------------:|:------------------:|:------------------:|:---------------------------:|:---------------------------:|
+    |      0.8      |  3885356/7765897   |      998/1997      |          1015/894           |        133.43/285.11        |
+    |      0.5      |  3884923/7764298   |      998/1993      |           952/880           |        85.41/138.40         |
+    |      0.3      |  3883838/7766680   |      998/1997      |          1011/800           |        82.15/153.83         |
   
   * add20:
   
-    | Temperature | Number of swaps  | Time to converge | Minimum edge cut observed | Time to execute (seconds) |
-    |-------------|------------------|------------------|---------------------------|---------------------------|
-    | 0.8         | 1971865/3942059  | 965/1993         | 1824/1790                 | 37.27/71.59               |
-    | 0.5         | 1971718/3942193  | 974/1981         | 1802/1786                 | 36.25/73.52               |
-    | 0.3         | 1972379/3942878  | 968/1987         | 1776/1798                 | 36.05/68.58               |
+    |  Temperature  |  Number of swaps   |  Time to converge  |  Minimum edge cut observed  |  Time to execute (seconds)  |
+    |:-------------:|:------------------:|:------------------:|:---------------------------:|:---------------------------:|
+    |      0.8      |  1971865/3942059   |      965/1993      |          1824/1790          |         37.27/71.59         |
+    |      0.5      |  1971718/3942193   |      974/1981      |          1802/1786          |         36.25/73.52         |
+    |      0.3      |  1972379/3942878   |      968/1987      |          1776/1798          |         36.05/68.58         |
   
   * Twitter:
   
-    | Temperature | Number of swaps | Time to converge      | Minimum edge cut observed | Time to execute (seconds) |
-    |-------------|-----------------|-----------------------|---------------------------|---------------------------|
-    | 0.8         | 2249248/4494843 | 656/403 (interesting) | 41686/41622               | 168.69/336.59             |
-    | 0.5         | 2249536/4496908 | 901/1576              | 41591/42123               | 173.00/341.28                   |
-    | 0.3         | 2248825/449047  | 782/901               | 41662/41604               | 172.15/339.30                   |
+    |  Temperature  |  Number of swaps  |    Time to converge     |  Minimum edge cut observed  |  Time to execute (seconds)  |
+    |:-------------:|:-----------------:|:-----------------------:|:---------------------------:|:---------------------------:|
+    |      0.8      |  2249248/4494843  |  656/403 (interesting)  |         41686/41622         |        168.69/336.59        |
+    |      0.5      |  2249536/4496908  |        901/1576         |         41591/42123         |        173.00/341.28        |
+    |      0.3      |  2248825/449047   |         782/901         |         41662/41604         |        172.15/339.30        |
   
 **_Results_**: 
 
@@ -236,52 +236,52 @@ In this section we are going to experiment with different parameters and configu
 * Number of partitions
   * 3elt:
     
-    | Nr Partitions | Number of swaps | Time to converge | Minimum edge cut observed | Time to execute (seconds) |
-    |---------------|-----------------|------------------|---------------------------|---------------------------|
-    | 2             | 1553468         | 365              | 915                       | 27.12                     |
-    | 4             | 1307755         | 417              | 1163                      | 17.65                     |
-    | 8             | 890072          | 476              | 1471                      | 27.04                     |
+    |  Nr Partitions  |  Number of swaps  |  Time to converge  |  Minimum edge cut observed  |  Time to execute (seconds)  |
+    |:---------------:|:-----------------:|:------------------:|:---------------------------:|:---------------------------:|
+    |        2        |      1553468      |        365         |             915             |            27.12            |
+    |        4        |      1307755      |        417         |            1163             |            17.65            |
+    |        8        |      890072       |        476         |            1471             |            27.04            |
 
   * add20:
     
-    | Nr Partitions | Number of swaps | Time to converge | Minimum edge cut observed | Time to execute (seconds) |
-    |---------------|-----------------|------------------|---------------------------|---------------------------|
-    | 2             | 789049          | 886              | 863                       | 13.45                     |
-    | 4             | 673453          | 894              | 1460                      | 8.34                      |
-    | 8             | 468891          | 793              | 2170                      | 14.31                     |
+    |  Nr Partitions  |  Number of swaps  |  Time to converge  |  Minimum edge cut observed  |  Time to execute (seconds)  |
+    |:---------------:|:-----------------:|:------------------:|:---------------------------:|:---------------------------:|
+    |        2        |      789049       |        886         |             863             |            13.45            |
+    |        4        |      673453       |        894         |            1460             |            8.34             |
+    |        8        |      468891       |        793         |            2170             |            14.31            |
 
   * Twitter:
     
-    | Nr Partitions | Number of swaps | Time to converge           | Minimum edge cut observed | Time to execute (seconds) |
-    |---------------|-----------------|----------------------------|---------------------------|---------------------------|
-    | 2             | 899733          | 838                        | 11632                     | 163.71                    |
-    | 4             | 765501          | 759                        | 41160                     | 31.70                     |
-    | 8             | 590143          | 987 (maybe not converged)  | 90344                     | 190.53                    |
+    | Nr Partitions | Number of swaps |      Time to converge      | Minimum edge cut observed | Time to execute (seconds) |
+    |:-------------:|:---------------:|:--------------------------:|:-------------------------:|:-------------------------:|
+    |       2       |     899733      |            838             |           11632           |          163.71           |
+    |       4       |     765501      |            759             |           41160           |           31.70           |
+    |       8       |     590143      | 987 (maybe not converged)  |           90344           |          190.53           |
 
 
 * Alpha:
   * 3elt:
     
     | Alpha | Number of swaps | Time to converge | Minimum edge cut observed | Time to execute (seconds) |
-    |-------|-----------------|------------------|---------------------------|---------------------------|
-    | 0.5   | 1367348         | 412              | 1003                      | 36.67                     |
-    | 2     | 1307755         | 417              | 1163                      | 17.65                     |
-    | 4     | 1303969         | 396              | 1247                      | 74.31                     |
+    |:-----:|:---------------:|:----------------:|:-------------------------:|:-------------------------:|
+    |  0.5  |     1367348     |       412        |           1003            |           36.67           |
+    |   2   |     1307755     |       417        |           1163            |           17.65           |
+    |   4   |     1303969     |       396        |           1247            |           74.31           |
 
   * add20:
   
-    | Alpha | Number of swaps | Time to converge             | Minimum edge cut observed | Time to execute (seconds) |
-    |-------|-----------------|------------------------------|---------------------------|---------------------------|
-    | 0.5   | 727933          | 994 (probably not converged) | 1221                      | 19.66                     |
-    | 2     | 673453          | 894                          | 1460                      | 8.34                      |
-    | 4     | 675828          | 984 (probably not converged) | 1519                      | 38.33                     |
+    | Alpha | Number of swaps |       Time to converge       | Minimum edge cut observed | Time to execute (seconds) |
+    |:-----:|:---------------:|:----------------------------:|:-------------------------:|:-------------------------:|
+    |  0.5  |     727933      | 994 (probably not converged) |           1221            |           19.66           |
+    |   2   |     673453      |             894              |           1460            |           8.34            |
+    |   4   |     675828      | 984 (probably not converged) |           1519            |           38.33           |
 
   * Twitter:
   
     | Alpha | Number of swaps | Time to converge | Minimum edge cut observed | Time to execute (seconds) |
-    |-------|-----------------|------------------|---------------------------|---------------------------|
-    | 0.5   | 886644          | 685              | 42342                     | 170.15                    |
-    | 2     | 765501          | 759              | 41160                     | 31.70                     |
-    | 4     | 756612          | 510              | 42043                     | 170.71                    |
+    |:-----:|:---------------:|:----------------:|:-------------------------:|:-------------------------:|
+    |  0.5  |     886644      |       685        |           42342           |          170.15           |
+    |   2   |     765501      |       759        |           41160           |           31.70           |
+    |   4   |     756612      |       510        |           42043           |          170.71           |
 
   * if alpha is set too high, nodes might overestimate the value of a swap and end up in an inferior state.
