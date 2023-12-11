@@ -157,6 +157,15 @@ You can see the implemented code commented in [Jabeja.java](src%2Fmain%2Fjava%2F
 All the other parameters kept their original default values described in [Task 2](#task-2) except for temperature,
 which in that case its maximum value is 1, so we assume it is now our default value.
 
+Here we show the same plots as before while implementing the new simulated annealing function:
+* 3elt:
+![3elt3000.png](images%2Ftask2%2Fdeltas%2FnewAnnealing%2F3elt3000.png)
+* add20:
+![add203000.png](images%2Ftask2%2Fdeltas%2FnewAnnealing%2Fadd203000.png)
+* Twitter:
+![twitter3000.png](images%2Ftask2%2Fdeltas%2FnewAnnealing%2Ftwitter3000.png)
+
+
 ##### **Deltas**:
 We again, started by analyzing the effect delta has in the algorithm.
 
@@ -168,7 +177,6 @@ We again, started by analyzing the effect delta has in the algorithm.
     |  0.5   (*)   | 3885387/11645341  |     999/2980     |           889/766            |       139.03/88.07        |
     |  0.8   (*)   | 3886617/11646922  |     999/2987     |           843/781            |       134.42/88.48        |
 (*) not even converged with 2000 rounds
-![3elt3000.png](images%2Ftask2%2Fdeltas%2FnewAnnealing%2F3elt3000.png)
 
   * add20: 
       
@@ -177,7 +185,6 @@ We again, started by analyzing the effect delta has in the algorithm.
     |  0.003  |  1972708/3942139   |              878/1582               |          1779/1783          |        65.39/131.55         |
     |   0.5   |  1972261/3943393   |              886/1707               |          1785/1796          |        65.60/129.44         |
     |   0.8   |  1972494/3942041   |  998/1938 (probably not converged)  |          1783/1742          |        67.87/130.68         |
-![add203000.png](images%2Ftask2%2Fdeltas%2FnewAnnealing%2Fadd203000.png)
 
   * Twitter: 
     
@@ -186,7 +193,6 @@ We again, started by analyzing the effect delta has in the algorithm.
     |  0.003  |  2247437/4498187   |      835/1942      |         41615/41652         |       294.34/1002.58        |
     |   0.5   |  2248966/4497603   |      569/1281      |         41627/42230         |        277.36/731.49        |
     |   0.8   |  2250259/4498067   |      782/1911      |         42372/42270         |        332.97/611.95        |
-![twitter3000.png](images%2Ftask2%2Fdeltas%2FnewAnnealing%2Ftwitter3000.png)
 
 **_Results_**: 
 
@@ -205,23 +211,23 @@ Later again, we studied the effect the initial temperature has in the algorithm.
     |      0.8      |  3885356/7765897   |      998/1997      |          1015/894           |        133.43/285.11        |
     |      0.5      |  3884923/7764298   |      998/1993      |           952/880           |        85.41/138.40         |
     |      0.3      |  3883838/7766680   |      998/1997      |          1011/800           |        82.15/153.83         |
-![3elt3000.png](images%2Ftask2%2Fdeltas%2FnewAnnealing%2F3elt3000.png)
+
   * add20:
-  
+
     |  Temperature  |  Number of swaps   |  Time to converge  |  Minimum edge cut observed  |  Time to execute (seconds)  |
     |:-------------:|:------------------:|:------------------:|:---------------------------:|:---------------------------:|
     |      0.8      |  1971865/3942059   |      965/1993      |          1824/1790          |         37.27/71.59         |
     |      0.5      |  1971718/3942193   |      974/1981      |          1802/1786          |         36.25/73.52         |
     |      0.3      |  1972379/3942878   |      968/1987      |          1776/1798          |         36.05/68.58         |
-  ![add203000.png](images%2Ftask2%2Fdeltas%2FnewAnnealing%2Fadd203000.png)
+
   * Twitter:
-  
+
     |  Temperature  |  Number of swaps  |    Time to converge     |  Minimum edge cut observed  |  Time to execute (seconds)  |
     |:-------------:|:-----------------:|:-----------------------:|:---------------------------:|:---------------------------:|
     |      0.8      |  2249248/4494843  |  656/403 (interesting)  |         41686/41622         |        168.69/336.59        |
     |      0.5      |  2249536/4496908  |        901/1576         |         41591/42123         |        173.00/341.28        |
     |      0.3      |  2248825/449047   |         782/901         |         41662/41604         |        172.15/339.30        |
-  ![twitter3000.png](images%2Ftask2%2Fdeltas%2FnewAnnealing%2Ftwitter3000.png)
+
 **_Results_**: 
 
 
@@ -234,7 +240,6 @@ Later again, we studied the effect the initial temperature has in the algorithm.
 
 ### Task 2.2:
 In this section we are going to experiment with different parameters and configurations to find lower edge cuts.
-
 
 ### Other analysis:
 
