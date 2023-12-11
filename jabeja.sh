@@ -4,7 +4,8 @@
 graph="3elt.graph"
 
 # Use time command to measure elapsed time
-{ /usr/bin/time -p ./run.sh -temp 2.0 -rounds 1000 -delta 0.003 -graph "graphs/${graph}" 2>&1; } | tee "./logs/task1/${graph}.txt"
+{ /usr/bin/time -p ./run.sh -temp 2.0 -numPartitions 8 -rounds 1000 -delta 0.003 -graph "graphs/${graph}" 2>&1; } | tee 
+"./logs/task1/${graph}.txt"
 
 # Define the log file
 LOG_FILE="./logs/task1/${graph}.txt"

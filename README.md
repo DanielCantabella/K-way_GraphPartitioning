@@ -263,6 +263,23 @@ In this section we are going to experiment with different parameters and configu
     |       4       |     765501      |            759             |           41160           |           31.70           |
     |       8       |     590143      | 987 (maybe not converged)  |           90344           |          190.53           |
 
+3elt graphs:
+* 2 partitions:
+![3elt2.png](images%2Ftask2%2Fpartitions%2F3elt2.png)
+* 8 partitions:
+![3elt8.png](images%2Ftask2%2Fpartitions%2F3elt8.png)
+
+add20 graphs:
+* 2 partitions:
+![add202.png](images%2Ftask2%2Fpartitions%2Fadd202.png)
+* 8 partitions:
+![add208.png](images%2Ftask2%2Fpartitions%2Fadd208.png)
+
+Twitter graphs:
+* 2 partitions:
+![twitter2.png](images%2Ftask2%2Fpartitions%2Ftwitter2.png)
+* 8 partitions:
+![twitter8.png](images%2Ftask2%2Fpartitions%2Ftwitter8.png)
 
 * Alpha:
   * 3elt:
